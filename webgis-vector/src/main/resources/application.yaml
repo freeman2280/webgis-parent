@@ -1,0 +1,8 @@
+server:
+  port: 7005
+spring:
+  application:
+    name: VECTOR
+  cloud:
+    nacos:
+      server-addr: localhost:8848

@@ -1,0 +1,61 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      routes:
+        # DIR目录树服务
+        - id: dir_router
+          uri: lb://DIR
+          predicates:
+            - Path=/webgis/dir/**
+          filters:
+            - StripPrefix=2
+        # OGCservice服务
+        - id: ogcservice_router
+          uri: lb://OGCSERVICE
+          predicates:
+            - Path=/webgis/service/**
+          filters:
+            - StripPrefix=2
+
+        # raster栅格数据处理服务
+        - id: raster_router
+          uri: lb://RASTER
+          predicates:
+            - Path=/webgis/raster/**
+          filters:
+            - StripPrefix=2
+
+        # security服务
+        - id: security_router
+          uri: lb://SECURITY
+          predicates:
+            - Path=/webgis/security/**
+          filters:
+            - StripPrefix=2
+        # user服务
+        - id: user_router
+          uri: lb://USER
+          predicates:
+            - Path=/webgis/user/**
+          filters:
+            - StripPrefix=2
+
+        # vector矢量数据服务
+        - id: vector_router
+          uri: lb://USER
+          predicates:
+            - Path=/webgis/vector/**
+          filters:
+            - StripPrefix=2
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*" #允许所有域名访问
+            allowedMethods: "*" #允许所有请求方式访问
+            allowedHeaders: "*" #允许所有请求头可以访问

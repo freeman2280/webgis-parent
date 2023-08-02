@@ -1,0 +1,8 @@
+server:
+  port: 7004
+spring:
+  application:
+    name: USER
+  cloud:
+    nacos:
+      server-addr: localhost:8848

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="webgis-raster" />
+        <module name="webgis-common" />
+        <module name="webgis-gateway" />
+        <module name="webgis-security" />
+        <module name="webgis-vector" />
+        <module name="webgis-OGCservice" />
+        <module name="webgis-user" />
+        <module name="webgis-dir" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="webgis-OGCservice" options="-parameters" />
+      <module name="webgis-common" options="-parameters" />
+      <module name="webgis-dir" options="-parameters" />
+      <module name="webgis-gateway" options="-parameters" />
+      <module name="webgis-parent" options="-parameters" />
+      <module name="webgis-raster" options="-parameters" />
+      <module name="webgis-security" options="-parameters" />
+      <module name="webgis-user" options="-parameters" />
+      <module name="webgis-vector" options="-parameters" />
+    </option>
+  </component>
+</project>
